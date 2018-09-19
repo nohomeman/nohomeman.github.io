@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="学习笔记," />
+  <meta name="keywords" content="ES6,教程," />
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="前言最近是想着坚实一下自己JS的基础，所以想着看看原生的知识。 准备在这里先说说什么是函数柯里化。  什么是函数柯里化 在一个函数中首先填充几个参数(然后再返回一个新函数)的技术称为柯里化(Currying)。(来自《JavaScript忍者秘籍》一书中)    开始这里有两个例子可以帮助理解！最简单的加法函数123456//函数定义function add(x,y)&amp;#123;    retur">
-<meta name="keywords" content="学习笔记">
+<meta name="description" content="前言接着写没写完的！今天主要针对的是数据类型的迁移、这一篇主要针对Number、String Number二进制和八进制的新的表示方法 二进制以’0b’或者’0B’开头八进制以’0o’或者’0O’开头  123450b111110111 === 503 // true0o767 === 503 // true//二进制和八进制转化为十进制Number(&amp;apos;0b111&amp;apos;)  //">
+<meta name="keywords" content="ES6,教程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript学习之浅谈函数柯里化(Currying)">
-<meta property="og:url" content="http://nohomeman.github.io/JavaScript学习之浅谈函数柯里化-Currying/index.html">
+<meta property="og:title" content="ES6的迁移之路---[2]">
+<meta property="og:url" content="http://nohomeman.github.io/ES6的迁移之路-2/index.html">
 <meta property="og:site_name" content="NoHomeMan">
-<meta property="og:description" content="前言最近是想着坚实一下自己JS的基础，所以想着看看原生的知识。 准备在这里先说说什么是函数柯里化。  什么是函数柯里化 在一个函数中首先填充几个参数(然后再返回一个新函数)的技术称为柯里化(Currying)。(来自《JavaScript忍者秘籍》一书中)    开始这里有两个例子可以帮助理解！最简单的加法函数123456//函数定义function add(x,y)&amp;#123;    retur">
+<meta property="og:description" content="前言接着写没写完的！今天主要针对的是数据类型的迁移、这一篇主要针对Number、String Number二进制和八进制的新的表示方法 二进制以’0b’或者’0B’开头八进制以’0o’或者’0O’开头  123450b111110111 === 503 // true0o767 === 503 // true//二进制和八进制转化为十进制Number(&amp;apos;0b111&amp;apos;)  //">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-18T07:47:03.903Z">
+<meta property="og:updated_time" content="2018-09-19T08:12:29.950Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript学习之浅谈函数柯里化(Currying)">
-<meta name="twitter:description" content="前言最近是想着坚实一下自己JS的基础，所以想着看看原生的知识。 准备在这里先说说什么是函数柯里化。  什么是函数柯里化 在一个函数中首先填充几个参数(然后再返回一个新函数)的技术称为柯里化(Currying)。(来自《JavaScript忍者秘籍》一书中)    开始这里有两个例子可以帮助理解！最简单的加法函数123456//函数定义function add(x,y)&amp;#123;    retur">
+<meta name="twitter:title" content="ES6的迁移之路---[2]">
+<meta name="twitter:description" content="前言接着写没写完的！今天主要针对的是数据类型的迁移、这一篇主要针对Number、String Number二进制和八进制的新的表示方法 二进制以’0b’或者’0B’开头八进制以’0o’或者’0O’开头  123450b111110111 === 503 // true0o767 === 503 // true//二进制和八进制转化为十进制Number(&amp;apos;0b111&amp;apos;)  //">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://nohomeman.github.io/JavaScript学习之浅谈函数柯里化-Currying/"/>
+  <link rel="canonical" href="http://nohomeman.github.io/ES6的迁移之路-2/"/>
 
 
 
 
 
-  <title>JavaScript学习之浅谈函数柯里化(Currying) | NoHomeMan</title>
+  <title>ES6的迁移之路---[2] | NoHomeMan</title>
   
 
 
@@ -313,7 +313,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://nohomeman.github.io/JavaScript学习之浅谈函数柯里化-Currying/">
+    <link itemprop="mainEntityOfPage" href="http://nohomeman.github.io/ES6的迁移之路-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="NoHomeMan">
@@ -330,7 +330,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript学习之浅谈函数柯里化(Currying)</h1>
+          <h1 class="post-title" itemprop="name headline">ES6的迁移之路---[2]</h1>
         
 
         <div class="post-meta">
@@ -342,8 +342,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-18T14:32:22+08:00">
-                2018-09-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-19T14:52:26+08:00">
+                2018-09-19
               </time>
             
 
@@ -384,8 +384,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/JavaScript学习之浅谈函数柯里化-Currying/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="JavaScript学习之浅谈函数柯里化-Currying/" itemprop="commentsCount"></span>
+                <a href="/ES6的迁移之路-2/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="ES6的迁移之路-2/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -393,7 +393,7 @@
 
           
           
-             <span id="/JavaScript学习之浅谈函数柯里化-Currying/" class="leancloud_visitors" data-flag-title="JavaScript学习之浅谈函数柯里化(Currying)">
+             <span id="/ES6的迁移之路-2/" class="leancloud_visitors" data-flag-title="ES6的迁移之路---[2]">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -424,7 +424,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,283
+                  1,648
                 </span>
               
 
@@ -440,7 +440,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  8
                 </span>
               
             </div>
@@ -461,29 +461,53 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近是想着坚实一下自己JS的基础，所以想着看看原生的知识。</p>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>在这里先说说什么是函数柯里化。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>接着写没写完的！今天主要针对的是数据类型的迁移、这一篇主要针对<code>Number</code>、<code>String</code></p>
+<h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><h3 id="二进制和八进制的新的表示方法"><a href="#二进制和八进制的新的表示方法" class="headerlink" title="二进制和八进制的新的表示方法"></a>二进制和八进制的新的表示方法</h3><blockquote>
+<p>二进制以’0b’或者’0B’开头<br>八进制以’0o’或者’0O’开头</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">0b111110111 === 503 // true</span><br><span class="line">0o767 === 503 // true</span><br><span class="line">//二进制和八进制转化为十进制</span><br><span class="line">Number(&apos;0b111&apos;)  // 7</span><br><span class="line">Number(&apos;0o10&apos;)  // 8</span><br></pre></td></tr></table></figure>
+<h3 id="Number对象新增的方法"><a href="#Number对象新增的方法" class="headerlink" title="Number对象新增的方法"></a>Number对象新增的方法</h3><p>Number.isFinite()检测一个数值是不是有限的,只有数字且是有限的才会返回true,否则一律是false<br>Number.isNaN(),检测一个数值是不是NaN,只有数字且是NaN的时候才会返回true,否则一律false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  Number.isFinite(123);  // true</span><br><span class="line">  Number.isFinite(&quot;123&quot;);  // false</span><br><span class="line">  Number.isFinite(&quot;sd&quot;);  // false</span><br><span class="line">  Number.isNaN(NaN);  //true</span><br><span class="line">  Number.isNaN(123);  //false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Number.parseInt(),Number.parseFloat()将全局的parseInt和parseFloat移植到Number对象上,行为不变<br>Number.isInteger(),判断数值是不是整数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 3.0000000000000002达到了小数点后16个10进制位数,转换为2进制就超出了2^53,所以最后一个2被忽略了,仍然被认为是整数</span><br><span class="line">Number.isInteger(3.0000000000000002) // true</span><br><span class="line">console.log(&apos;25&apos;,Number.isInteger(25));// true</span><br><span class="line">console.log(&apos;25.0&apos;,Number.isInteger(25.0));//true</span><br><span class="line">console.log(&apos;25.1&apos;,Number.isInteger(25.1));//false</span><br><span class="line">console.log(&apos;25.1&apos;,Number.isInteger(&apos;25&apos;));//false</span><br></pre></td></tr></table></figure></p>
+<p>Number.EPSILON,是一个常量,表示1和大于1的最小浮点数的差</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Number.EPSILON === Math.pow(2,-52);     // true</span><br></pre></td></tr></table></figure>
+<p>Number.isSafeInteger(),判断一个整数是不是在常量Number.MIN_SAFE_INTEGER和Number.MAX_SAFE_INTEGER之间,包括2端<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  console.log(Number.MAX_SAFE_INTEGER,Number.MIN_SAFE_INTEGER);</span><br><span class="line">  console.log(&apos;10&apos;,Number.isSafeInteger(10));//true</span><br><span class="line">  console.log(&apos;a&apos;,Number.isSafeInteger(&apos;a&apos;));//false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Math对象的拓展"><a href="#Math对象的拓展" class="headerlink" title="Math对象的拓展"></a>Math对象的拓展</h3><p>Math.trunc()方法用于去除一个数的小数部分，返回整数部分。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  console.log(4.1,Math.trunc(4.1));//4</span><br><span class="line">  console.log(4.9,Math.trunc(4.9));//4</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意<label style="color:orange">参数为非数值时，Math.trunc()方法会先用Number()将其转换为数值，若无法获取数值的整数部分，比如字符串或NaN或空值等，会返回NaN.</label><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(Math.trunc(NaN),Math.trunc(&apos;foo&apos;),Math.trunc())//NaN,NaN,NaN</span><br></pre></td></tr></table></figure></p>
+<p>Math.sign()方法用来判断一个数到底是正数、负数还是0</p>
+<blockquote>
+<p>(1)参数为正数返回+1<br>(2)参数为负数返回-1<br>(3)参数为0返回0<br>(4)参数为-0返回-0<br>(5)其他值返回NaN</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">console.log(</span><br><span class="line">  Math.sign(-5),</span><br><span class="line">  Math.sign(5),</span><br><span class="line">  Math.sign(0),</span><br><span class="line">  Math.sign(NaN),</span><br><span class="line">  Math.sign(&apos;aaa&apos;),</span><br><span class="line">  Math.sign()</span><br><span class="line">  )//-1,1,0,NaN,NaN,NaN</span><br></pre></td></tr></table></figure>
+<p>Math.cbrt()方法用于计算一个数的立方根</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  console.log(&apos;-1&apos;,Math.cbrt(-1));-1</span><br><span class="line">  console.log(&apos;8&apos;,Math.cbrt(8));2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Math.hypot()方法返回所有参数的平方和的平方根。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Math.hypot(3,4)//5</span><br><span class="line">Math.hypot(3,4,5)//7.07106</span><br><span class="line">Math.hypot()//0</span><br><span class="line">Math.hypot(NaN)//NaN</span><br><span class="line">Math.hypot(3,4,&apos;foo&apos;)//NaN</span><br><span class="line">Math.hypot(3,4,&apos;5&apos;)//7.07106</span><br><span class="line">Math.hypot(-3)//3</span><br></pre></td></tr></table></figure></p>
+<p>注意<label style="color:orange">Math.hypot()会把非数值参数转换为数值，若有一个参数不能转为数值就返回NaN.</label></p>
 <ul>
-<li>什么是函数柯里化<blockquote>
-<p>在一个函数中首先填充几个参数(然后再返回一个新函数)的技术称为柯里化(Currying)。(来自《JavaScript忍者秘籍》一书中)</p>
+<li><p>ES6新增了6个三角函数方法.</p>
+<blockquote>
+<p>(1)Math.sinh(x) 返回x的双曲正弦<br>(2)Math.cosh(x) 返回x的双曲余弦<br>(3)Math.tanh(x) 返回x的双曲正切<br>(4)Math.asinh(x) 返回x的反双曲正弦<br>(5)Math.acosh(x) 返回x的反双曲余切<br>(6)Math.atanh(x) 返回x的反双曲正切</p>
+</blockquote>
+</li>
+<li><p>ES7增加了一个指数运算符**,可以与等号结合</p>
+<blockquote>
+<p>2**3//8<br>let a=2;<br>a**=2;//等价于a=a**a;</p>
 </blockquote>
 </li>
 </ul>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>这里有两个例子可以帮助理解！<br>最简单的加法函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//函数定义</span><br><span class="line">function add(x,y)&#123;</span><br><span class="line">    return x + y;</span><br><span class="line">&#125;</span><br><span class="line">//函数调用</span><br><span class="line">add(3,4);//5</span><br></pre></td></tr></table></figure></p>
-<p>如果采用柯里化是怎样将接受两个参数的函数变成接受单一参数的函数呢，其实很简单如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//函数表达式定义</span><br><span class="line">var add = function(x)&#123;</span><br><span class="line">    return function(y)&#123;</span><br><span class="line">        return x + y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">//函数调用</span><br><span class="line">add(3)(4);</span><br></pre></td></tr></table></figure></p>
-<p>其实实质利用的就是闭包的概念。</p>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>本质上讲柯里化(Currying)只是一个理论模型，柯里化所要表达是:如果你固定某些参数，你将得到接受余下参数的一个函数,所以对于有两个变量的函数<code>y^x</code>，如果固定了<code>y=2</code>，则得到有一个变量的函数<code>2^x</code>。这就是求值策略中的部分求值策略。<br>柯里化(Currying)具有：延迟计算、参数复用、动态生成函数的作用。</p>
-<h2 id="JS中bind-与函数柯里化"><a href="#JS中bind-与函数柯里化" class="headerlink" title="JS中bind()与函数柯里化"></a>JS中bind()与函数柯里化</h2><p>其实在实际使用中使用最多的一个柯里化的例子就是<code>Function.prototype.bind()</code>函数，我们也一并给出一个较为简单的<code>Function.prototype.bind()</code>函数的实现方式。</p>
-<label style="color:orange">绑定函数bind()最简单的用法是创建一个函数，使这个函数不论怎么调用都有同样的this值。不同于call和apply只是单纯地设置this的值后传参，它还会将所有传入bind()方法中的实参（第一个参数之后的参数）与this一起绑定。</label>
+<h2 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h2><h3 id="includes-startsWith-endsWith"><a href="#includes-startsWith-endsWith" class="headerlink" title="includes(), startsWith(), endsWith()"></a>includes(), startsWith(), endsWith()</h3><p>从字面就可以明白，一个是看是否包含子串，一个是是否以子串开头，一个是是否以子串结尾。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let s = &apos;Hello world!&apos;;</span><br><span class="line"></span><br><span class="line">s.startsWith(&apos;Hello&apos;) // true</span><br><span class="line">s.endsWith(&apos;!&apos;) // true</span><br><span class="line">s.includes(&apos;o&apos;) // true</span><br></pre></td></tr></table></figure></p>
+<p>includes()比indexOf()的优势在于，indexOf()的返回结果不是布尔值，须与-1对比，不够直观。<br>这三个方法都支持第二个参数，表示从哪里开始检索。</p>
+<p>其中，includes()和startsWith()的默认值是0，表示检索范围是参数值检索到末尾，很简单不多说。</p>
+<p>endsWith()很特殊，它第二个参数的默认值是字符串总长度值，表示检索范围是从开头检索到这个值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let s = &apos;Hello world!&apos;;</span><br><span class="line"></span><br><span class="line">s.includes(&apos;Hello&apos;, 6) // false 从左起第6位到末尾的范围内检索，结果是没找到</span><br><span class="line">s.startsWith(&apos;world&apos;, 6) // true 从左起第6位到末尾，看看是不是以world开头，结果是</span><br><span class="line">s.endsWith(&apos;Hello&apos;, 8) // false 从开头找到第8位，看看是不是以Hello结束，结果不是</span><br></pre></td></tr></table></figure></p>
+<h3 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h3><p>表示重复多少次。</p>
+<p>如果参数是正小数，会取整。<br>如果参数是负数，会报错。<br>如果参数是0，会得到空串。<br>如果参数是字符串、布尔型或其他类型，会先换算成整数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  let str=&quot;abc&quot;;</span><br><span class="line">  console.log(str.repeat(2));//abcabc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="padStart-，padEnd"><a href="#padStart-，padEnd" class="headerlink" title="padStart()，padEnd()"></a>padStart()，padEnd()</h3><p>这两个是ES8（也就是2017）新增方法<br>用于在开头补全字符和在末尾补全字符，padStart和padEnd一共接受两个参数，第一个参数用来指定字符串的最小长度，第二个参数是用来补全的字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  console.log(&apos;1&apos;.padStart(2,&apos;0&apos;));//01</span><br><span class="line">  console.log(&apos;1&apos;.padEnd(2,&apos;0&apos;));//10</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="重点模板字符串"><a href="#重点模板字符串" class="headerlink" title="重点模板字符串"></a><label style="color:orange">重点模板字符串</label></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  let name=&quot;list&quot;;</span><br><span class="line">  let info=&quot;hello world&quot;;</span><br><span class="line">  let m=`i am $&#123;name&#125;,$&#123;info&#125;`;</span><br><span class="line">  console.log(m);//i am list,hellow world</span><br><span class="line"></span><br><span class="line">  let user=&#123;</span><br><span class="line">    name:&apos;list&apos;,</span><br><span class="line">    info:&apos;hello world&apos;</span><br><span class="line">  &#125;;</span><br><span class="line">  console.log(abc`i am $&#123;user.name&#125;,$&#123;user.info&#125;`);//abci am list,hellow world</span><br><span class="line"></span><br><span class="line">  console.log(String.raw`Hi\n$&#123;1+2&#125;`);//Hi\n3</span><br><span class="line">  console.log(`Hi\n$&#123;1+2&#125;`);//h(换行了)3</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们可以看出，现在这种写法更加的友好了。<br>比如有一段HTML是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;page&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">    &lt;a target=&quot;_blank&quot; class=&quot;news-link&quot; href=&quot;/news/92199/nodemon-1-14-8&quot;&gt;Nodemon v1.14.8 发布&lt;/a&gt;</span><br><span class="line">    &lt;span class=&quot;box-fr news-date&quot;&gt;01/07&lt;/span&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  ... 重复若干个div.box</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>我就可以设一个返回最终HTML的函数，这个函数使用了ES6的简写方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const createTmpl = boxes =&gt; `</span><br><span class="line">&lt;div class=&quot;page&quot;&gt;</span><br><span class="line">  $&#123;boxes.map(box =&gt; `</span><br><span class="line">  &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">    &lt;a target=&quot;_blank&quot; class=&quot;news-link&quot; href=&quot;$&#123;box.href&#125;&quot;&gt;$&#123;box.title&#125;&lt;/a&gt;</span><br><span class="line">    &lt;span class=&quot;box-fr news-date&quot;&gt;$&#123;box.date&#125;&lt;/span&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  `).join(&apos;&apos;)&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">`;</span><br><span class="line"></span><br><span class="line">let boxdata = [</span><br><span class="line">    &#123;href: &quot;http://...1&quot;, title: &quot;biaoti1&quot;, date: &quot;01/08&quot;&#125;,</span><br><span class="line">    &#123;href: &quot;http://...2&quot;, title: &quot;biaoti2&quot;, date: &quot;02/08&quot;&#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">createTmpl(boxdata);</span><br></pre></td></tr></table></figure></p>
+<p>然后传入数据，调用函数，得到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&quot;</span><br><span class="line">&lt;div class=&quot;page&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">    &lt;a target=&quot;_blank&quot; class=&quot;news-link&quot; href=&quot;http://...1&quot;&gt;biaoti1&lt;/a&gt;</span><br><span class="line">    &lt;span class=&quot;box-fr news-date&quot;&gt;01/08&lt;/span&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">    &lt;a target=&quot;_blank&quot; class=&quot;news-link&quot; href=&quot;http://...2&quot;&gt;biaoti2&lt;/a&gt;</span><br><span class="line">    &lt;span class=&quot;box-fr news-date&quot;&gt;02/08&lt;/span&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&quot;</span><br></pre></td></tr></table></figure></p>
+<p>今天就写到这里吧，下次给大家带来Array、Object、Function的变化</p>
 
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">//《JS权威指南》原文的例子</span><br><span class="line">var sum = function(x,y) &#123; return x + y &#125;;</span><br><span class="line"></span><br><span class="line">var succ = sum.bind(null, 1); //让this指向null，其后的实参也会作为实参传入被绑定的函数sum</span><br><span class="line"></span><br><span class="line">succ(2); // =&gt; 3: 可以看到1绑定到了sum函数中的x</span><br><span class="line"></span><br><span class="line">//传入bind中的实参都会绑定到原函数的形参</span><br><span class="line">function func(a,b,c,d)&#123;...&#125;  //func的length为4</span><br><span class="line"></span><br><span class="line">var after = func.bind(null,1,2);  //这里输入了两个实参（1，2）绑定到了func函数的a，b</span><br><span class="line"></span><br><span class="line">console.log(after.length);  //after的length为2</span><br><span class="line"></span><br><span class="line">//当bind()所返回的函数用作构造函数的时候， 传入bind()的this将被忽略，实参会全部传入原函数</span><br><span class="line">function original(x)&#123;</span><br><span class="line">  this.a = 1;</span><br><span class="line">  this.b = function()&#123;return this.a + x&#125;</span><br><span class="line">&#125;</span><br><span class="line">var obj=&#123;</span><br><span class="line">  a = 10</span><br><span class="line">&#125;</span><br><span class="line">var newObj = new(original.bind(obj, 2)); //传入了一个实参2</span><br><span class="line"></span><br><span class="line">console.log(newObj.a);  //输出1, 说明返回的函数用作构造函数时obj(this的值)被忽略了</span><br><span class="line">console.log(newObj.b()); //输出3 ，说明传入的实参2传入了原函数original</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">简单的`Function.prototype.bind()`函数的实现方式。</span><br><span class="line">Function.prototype.bind = function()&#123;</span><br><span class="line">    var fn = this;</span><br><span class="line">    var args = Array.prototye.slice.call(arguments);</span><br><span class="line">    var context = args.shift();</span><br><span class="line"></span><br><span class="line">    return function()&#123;</span><br><span class="line">        return fn.apply(context,</span><br><span class="line">            args.concat(Array.prototype.slice.call(arguments)));</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="实战演练一道关于闭包和函数的柯里化方面的编程题目"><a href="#实战演练一道关于闭包和函数的柯里化方面的编程题目" class="headerlink" title="实战演练一道关于闭包和函数的柯里化方面的编程题目"></a>实战演练一道关于闭包和函数的柯里化方面的编程题目</h2><p>编程题目的要求如下，完成plus函数，通过全部的测试用例。<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line">function plus(n)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">module.exports = plus</span><br></pre></td></tr></table></figure></p>
-<p>  测试用例如下</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line">var assert = require(&apos;assert&apos;)</span><br><span class="line"></span><br><span class="line">var plus = require(&apos;../lib/assign-4&apos;)</span><br><span class="line"></span><br><span class="line">describe(&apos;闭包应用&apos;,function()&#123;</span><br><span class="line">  it(&apos;plus(0) === 0&apos;,function()&#123;</span><br><span class="line">    assert.equal(0,plus(0).toString())</span><br><span class="line">  &#125;)</span><br><span class="line">  it(&apos;plus(1)(1)(2)(3)(5) === 12&apos;,function()&#123;</span><br><span class="line">    assert.equal(12,plus(1)(1)(2)(3)(5).toString())</span><br><span class="line">  &#125;)</span><br><span class="line">  it(&apos;plus(1)(4)(2)(3) === 10&apos;,function()&#123;</span><br><span class="line">    assert.equal(10,plus(1)(4)(2)(3).toString())</span><br><span class="line">  &#125;)</span><br><span class="line">  it(&apos;方法引用&apos;,function()&#123;</span><br><span class="line">    var plus2 = plus(1)(1)</span><br><span class="line">    assert.equal(12,plus2(1)(4)(2)(3).toString())</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>  根据测试用例我们可以发现，plus函数的要求就是接受单一函数，例如：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plus(1)(4)(2)(3).toString()</span><br></pre></td></tr></table></figure></p>
-<p>  但是与柯里化不同之处在于，柯里化返回的一个新函数。我们观察其实最后的求值是通过toString函数得到的，那么我们就很容易想到，我们可以给返回的函数增加一个toString属性就可以了。答案如下：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line"></span><br><span class="line">function plus(num) &#123;</span><br><span class="line">    var adder = function () &#123;</span><br><span class="line">        var _args = [];</span><br><span class="line">        var _adder = function _adder() &#123;</span><br><span class="line">            [].push.apply(_args, [].slice.call(arguments));</span><br><span class="line">            return _adder;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        _adder.toString = function () &#123;</span><br><span class="line">            return _args.reduce(function (a, b) &#123;</span><br><span class="line">                return a + b;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return _adder;</span><br><span class="line">    &#125;</span><br><span class="line">    return adder()(num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = plus;</span><br></pre></td></tr></table></figure></p>
-<p>  运行一下,通过全部的测试用例，需要注意的是由于题目的要求运行在严格模式下，所以我们在_adder函数内部是不能引用arguments.callee，这时我们采用的方法是给函数表达式中函数本身起名_adder，这样就解决的这个问题。</p>
-<h2 id="希望大家能从中或多或少学到一些东西，入行资历甚浅，不足之处请多指教！"><a href="#希望大家能从中或多或少学到一些东西，入行资历甚浅，不足之处请多指教！" class="headerlink" title="希望大家能从中或多或少学到一些东西，入行资历甚浅，不足之处请多指教！"></a><label style="color:red">希望大家能从中或多或少学到一些东西，入行资历甚浅，不足之处请多指教！</label></h2>
       
     </div>
     
@@ -498,12 +522,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/JavaScript学习之浅谈函数柯里化-Currying/">JavaScript学习之浅谈函数柯里化(Currying)</a></p>
+  <p><span>本文标题:</span><a href="/ES6的迁移之路-2/">ES6的迁移之路---[2]</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 NoHomeMan 的个人博客">NoHomeMan</a></p>
-  <p><span>发布时间:</span>2018年09月18日 - 14:09</p>
-  <p><span>最后更新:</span>2018年09月18日 - 15:09</p>
-  <p><span>原始链接:</span><a href="/JavaScript学习之浅谈函数柯里化-Currying/" title="JavaScript学习之浅谈函数柯里化(Currying)">http://nohomeman.github.io/JavaScript学习之浅谈函数柯里化-Currying/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://nohomeman.github.io/JavaScript学习之浅谈函数柯里化-Currying/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年09月19日 - 14:09</p>
+  <p><span>最后更新:</span>2018年09月19日 - 16:09</p>
+  <p><span>原始链接:</span><a href="/ES6的迁移之路-2/" title="ES6的迁移之路---[2]">http://nohomeman.github.io/ES6的迁移之路-2/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://nohomeman.github.io/ES6的迁移之路-2/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
 </div>
@@ -534,7 +558,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
+          
+            <a href="/tags/教程/" rel="tag"># 教程</a>
           
         </div>
       
@@ -547,8 +573,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/ES6的迁移之路/" rel="next" title="ES6的迁移之路---[1]">
-                <i class="fa fa-chevron-left"></i> ES6的迁移之路---[1]
+              <a href="/JavaScript学习之浅谈函数柯里化-Currying/" rel="next" title="JavaScript学习之浅谈函数柯里化(Currying)">
+                <i class="fa fa-chevron-left"></i> JavaScript学习之浅谈函数柯里化(Currying)
               </a>
             
           </div>
@@ -556,10 +582,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/ES6的迁移之路-2/" rel="prev" title="ES6的迁移之路---[2]">
-                ES6的迁移之路---[2] <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -726,7 +748,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">3.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">4.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS中bind-与函数柯里化"><span class="nav-number">5.</span> <span class="nav-text">JS中bind()与函数柯里化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战演练一道关于闭包和函数的柯里化方面的编程题目"><span class="nav-number">6.</span> <span class="nav-text">实战演练一道关于闭包和函数的柯里化方面的编程题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#希望大家能从中或多或少学到一些东西，入行资历甚浅，不足之处请多指教！"><span class="nav-number">7.</span> <span class="nav-text">希望大家能从中或多或少学到一些东西，入行资历甚浅，不足之处请多指教！</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Number"><span class="nav-number">2.</span> <span class="nav-text">Number</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制和八进制的新的表示方法"><span class="nav-number">2.1.</span> <span class="nav-text">二进制和八进制的新的表示方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number对象新增的方法"><span class="nav-number">2.2.</span> <span class="nav-text">Number对象新增的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math对象的拓展"><span class="nav-number">2.3.</span> <span class="nav-text">Math对象的拓展</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String类型"><span class="nav-number">3.</span> <span class="nav-text">String类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#includes-startsWith-endsWith"><span class="nav-number">3.1.</span> <span class="nav-text">includes(), startsWith(), endsWith()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#repeat"><span class="nav-number">3.2.</span> <span class="nav-text">repeat()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#padStart-，padEnd"><span class="nav-number">3.3.</span> <span class="nav-text">padStart()，padEnd()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重点模板字符串"><span class="nav-number">3.4.</span> <span class="nav-text">重点模板字符串</span></a></li></ol></li></ol></div>
             
 
           </div>
