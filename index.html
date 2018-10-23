@@ -313,6 +313,221 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://nohomeman.github.io/ES6的迁移之路-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NoHomeMan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/background.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NoHomeMan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/ES6的迁移之路-4/" itemprop="url">ES6的迁移之路---[4]</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-23T15:21:24+08:00">
+                2018-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/ES6的迁移之路-4/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://nohomeman.github.io/ES6的迁移之路-4/" class="cy_cmt_count" data-xid="ES6的迁移之路-4/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/ES6的迁移之路-4/" class="leancloud_visitors" data-flag-title="ES6的迁移之路---[4]">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+             <span class="post-meta-divider">|</span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,337
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对ES6中的 <code>Symbol</code>、<code>Reflect</code>、<code>set</code>、<code>WeakSet</code>、<code>map</code>、<code>WeakMap</code></p>
+<h2 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h2><p>Symbol是ES6新定义的一直数据类型.他表示独一无二。<br>声明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  let a = Symbol(),b = Symbol()</span><br><span class="line">  console.log(a === b) //false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Symbol.for机制有点类似于单例模式，首先在全局中搜索有没有以该参数作为名称的Symbol值，如果有，就返回这个Symbol值，否则就新建并返回一个以该字符串为名称的Symbol值。和直接的Symbol就点不同了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  let a=Symbol.for(&apos;a&apos;);</span><br><span class="line">  let b=Symbol.for(&apos;a&apos;);</span><br><span class="line">  console.log(a===b); //true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>symbol类型的数据使用一般的方法是查不出其属性的。需要使用Object.getOwnPropertySymbols()或者Reflect.ownKeys()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  let a1=Symbol.for(&apos;abc&apos;);</span><br><span class="line">  let obj=&#123;</span><br><span class="line">        [a1]:&apos;123&apos;,</span><br><span class="line">        &apos;abc&apos;:345,</span><br><span class="line">        &apos;c&apos;:456</span><br><span class="line">      &#125;;</span><br><span class="line">  console.log(&apos;obj&apos;,obj);&#125; //obj &#123; abc: 345, c: 456, [Symbol(abc)]: &apos;123&apos; &#125;</span><br><span class="line"></span><br><span class="line">  for(let [key,value] of Object.entries(obj))&#123;</span><br><span class="line">    console.log(&apos;let of&apos;,key,value);//let of abc 345</span><br><span class="line">                                    // let of c 456</span><br><span class="line">  &#125;</span><br><span class="line">  Object.getOwnPropertySymbols(obj).forEach(function(item)&#123;</span><br><span class="line">    console.log(obj[item]); // 123</span><br><span class="line">  &#125;)</span><br><span class="line">  Reflect.ownKeys(obj).forEach(function(item)&#123;</span><br><span class="line">    console.log(&apos;ownkeys&apos;,item,obj[item]);</span><br><span class="line">  &#125;)</span><br><span class="line">  /*</span><br><span class="line">  ownkeys abc 345</span><br><span class="line">  ownkeys c 456</span><br><span class="line">  ownkeys Symbol(abc) 123</span><br><span class="line">  */</span><br></pre></td></tr></table></figure></p>
+<h2 id="Reflect对象"><a href="#Reflect对象" class="headerlink" title="Reflect对象"></a>Reflect对象</h2><p>在上面提到的一个Reflect这个对象,多数Reflect方法原生的Object已经重新实现了.</p>
+<h3 id="为什么要使用Reflect"><a href="#为什么要使用Reflect" class="headerlink" title="为什么要使用Reflect"></a>为什么要使用Reflect</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br><span class="line">try &#123;</span><br><span class="line">  Object.defineProperty(obj, name, desc);</span><br><span class="line">  // property defined successfully</span><br><span class="line">&#125; catch (e) &#123;</span><br><span class="line">  // possible failure (and might accidentally catch the wrong exception)</span><br><span class="line">&#125;</span><br><span class="line">//执行成功会返回obj， 以及其它原因导致的错误</span><br><span class="line"></span><br><span class="line">if (Reflect.defineProperty(obj, name, desc)) &#123;</span><br><span class="line">  // success</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  // failure</span><br><span class="line">&#125;</span><br><span class="line">//只会返回false或者true来表示对象的属性是否设置上了</span><br></pre></td></tr></table></figure>
+<p>在ES5中这样判断：name in obj ； 或者删除一个属性 ：delete obj[name],  虽然这些很好用， 很简短， 很明确， 但是要使用的时候也要封装成一个类；<br>有了Reflect， 它帮你封装好了， Reflect.has(obj, name),  Reflect.deleteProperty(obj, name);</p>
+<p>Reflect.ownKeys()方法的使用：<br>Reflect.ownKeys， Object可没有ownKeys方法, Reflect.ownKeysz他的作用是返回对象的keys;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br><span class="line">console.log(Reflect.ownKeys(&#123;&quot;a&quot;:0,&quot;b&quot;:1,&quot;c&quot;:2,&quot;d&quot;:3&#125;)); //输出 ：[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]</span><br><span class="line">console.log(Reflect.ownKeys([])); // [&quot;length&quot;]</span><br><span class="line">var sym = Symbol.for(&quot;comet&quot;);</span><br><span class="line">var sym2 = Symbol.for(&quot;meteor&quot;);</span><br><span class="line">var obj = &#123;[sym]: 0, &quot;str&quot;: 0, &quot;773&quot;: 0, &quot;0&quot;: 0,</span><br><span class="line">    [sym2]: 0, &quot;-1&quot;: 0, &quot;8&quot;: 0, &quot;second str&quot;: 0&#125;;</span><br><span class="line">Reflect.ownKeys(obj); //输出：/ [ &quot;0&quot;, &quot;8&quot;, &quot;773&quot;, &quot;str&quot;, &quot;-1&quot;, &quot;second str&quot;, Symbol(comet), Symbol(meteor) ]</span><br></pre></td></tr></table></figure></p>
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>ES6提供了新的数据结构Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。<br>Set函数可以接受一个数组（或类似数组的对象）作为参数，用来初始化。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  let list = new Set();</span><br><span class="line">  list.add(5);</span><br><span class="line">  list.add(7);</span><br><span class="line"></span><br><span class="line">  console.log(&apos;size&apos;,list.size);//2</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  let arr = [1,2,3,4,5];</span><br><span class="line">  let list = new Set(arr);</span><br><span class="line"></span><br><span class="line">  console.log(&apos;size&apos;,list.size);//5</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  let list = new Set();</span><br><span class="line">  list.add(1);</span><br><span class="line">  list.add(2);</span><br><span class="line">  list.add(1);</span><br><span class="line"></span><br><span class="line">  console.log(&apos;list&apos;,list);//list Set &#123; 1, 2 &#125;</span><br><span class="line"></span><br><span class="line">  let arr=[1,2,3,1,&apos;2&apos;];//unique Set &#123; 1, 2, 3, &apos;2&apos; &#125;</span><br><span class="line">  let list2=new Set(arr);</span><br><span class="line"></span><br><span class="line">  console.log(&apos;unique&apos;,list2);</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  let arr=[&apos;add&apos;,&apos;delete&apos;,&apos;clear&apos;,&apos;has&apos;];</span><br><span class="line">  let list=new Set(arr);</span><br><span class="line"></span><br><span class="line">  console.log(&apos;has&apos;,list.has(&apos;add&apos;));//has true</span><br><span class="line">  console.log(&apos;delete&apos;,list.delete(&apos;add&apos;),list);//delete true Set &#123; &apos;delete&apos;, &apos;clear&apos;, &apos;has&apos; &#125;</span><br><span class="line">  list.clear();</span><br><span class="line">  console.log(&apos;list&apos;,list);//list Set &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  let arr=[&apos;add&apos;,&apos;delete&apos;,&apos;clear&apos;,&apos;has&apos;];</span><br><span class="line">  let list=new Set(arr);</span><br><span class="line"></span><br><span class="line">  for(let key of list.keys())&#123;</span><br><span class="line">    console.log(&apos;keys&apos;,key);</span><br><span class="line">  &#125;</span><br><span class="line">  /*</span><br><span class="line">  keys add</span><br><span class="line">  keys delete</span><br><span class="line">  keys clear</span><br><span class="line">  keys has</span><br><span class="line">  */</span><br><span class="line">  for(let value of list.values())&#123;</span><br><span class="line">    console.log(&apos;value&apos;,value);</span><br><span class="line">  &#125;</span><br><span class="line">  /*</span><br><span class="line">  value add</span><br><span class="line">  value delete</span><br><span class="line">  value clear</span><br><span class="line">  value has</span><br><span class="line">  */</span><br><span class="line">  for(let [key,value] of list.entries())&#123;</span><br><span class="line">    console.log(&apos;entries&apos;,key,value);</span><br><span class="line">  &#125;</span><br><span class="line">  /*</span><br><span class="line">  entries add add</span><br><span class="line">  entries delete delete</span><br><span class="line">  entries clear clear</span><br><span class="line">  entries has has</span><br><span class="line">  */</span><br><span class="line">  list.forEach(function(item)&#123;console.log(item);&#125;)</span><br><span class="line">  /*</span><br><span class="line">  add</span><br><span class="line">  delete</span><br><span class="line">  clear</span><br><span class="line">  has</span><br><span class="line">  */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Set实现并集，交集，差集"><a href="#Set实现并集，交集，差集" class="headerlink" title="Set实现并集，交集，差集"></a>Set实现并集，交集，差集</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let set1  = new Set([1,2,3,4,5,6]);</span><br><span class="line">let set2  = new Set([4,5,6,7,8,9]);</span><br><span class="line"></span><br><span class="line">//并集</span><br><span class="line">let union = new Set([...set1,...set2]);</span><br><span class="line">//[1,2,3,4,5,6,7,8,9]</span><br><span class="line">//交集</span><br><span class="line">let intersect = new Set([...set1].filter(x =&gt; b.has(s)));</span><br><span class="line">//[4,5,6]</span><br><span class="line">//差集</span><br><span class="line">let intersect = new Set([...set1].filter(x =&gt; !b.has(s)));</span><br><span class="line">//[1,2,3,4]</span><br></pre></td></tr></table></figure>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  let map = new Map();</span><br><span class="line">  let arr=[&apos;123&apos;];</span><br><span class="line"></span><br><span class="line">  map.set(arr,456);</span><br><span class="line"></span><br><span class="line">  console.log(&apos;map&apos;,map,map.get(arr));//map Map &#123; [ &apos;123&apos; ] =&gt; 456 &#125; 456</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  let map = new Map([[&apos;a&apos;,123],[&apos;b&apos;,456]]);</span><br><span class="line">  console.log(&apos;map args&apos;,map);//map args Map &#123; &apos;a&apos; =&gt; 123, &apos;b&apos; =&gt; 456 &#125;</span><br><span class="line">  console.log(&apos;size&apos;,map.size);//size 2</span><br><span class="line">  console.log(&apos;delete&apos;,map.delete(&apos;a&apos;),map);//delete true Map &#123; &apos;b&apos; =&gt; 456 &#125;</span><br><span class="line">  console.log(&apos;clear&apos;,map.clear(),map);clear undefined Map &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="WeakMap、WeakSet"><a href="#WeakMap、WeakSet" class="headerlink" title="WeakMap、WeakSet"></a>WeakMap、WeakSet</h2><p>他们对值的引用都是不计入垃圾回收机制的，所以名字里才会有一个weak，表示这个弱引用<br>下面以 WeakMap 为例，看看它是怎么解决内存泄漏的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const wm = new WeakMap();</span><br><span class="line">const element = document.getElementById(&apos;example&apos;);</span><br><span class="line">vm.set(element,&apos;something&apos;);</span><br><span class="line">vm.get(element);</span><br></pre></td></tr></table></figure></p>
+<p>先新建一个 Weakmap 实例。然后，将一个 DOM 节点作为键名存入该实例，并将一些附加信息作为键值，一起存放在 WeakMap 里面。这时，WeakMap 里面对element的引用就是弱引用，不会被计入垃圾回收机制。</p>
+<p>也就是说，DOM 节点对象的引用计数是1，而不是2。这时，一旦消除对该节点的引用，它占用的内存就会被垃圾回收机制释放。Weakmap 保存的这个键值对，也会自动消失。</p>
+<p>基本上，如果你要往对象上添加数据，又不想干扰垃圾回收机制，就可以使用 WeakMap</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  <div>
+    
+  </div>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://nohomeman.github.io/ES6的迁移之路-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1582,7 +1797,7 @@ canvas_ribbon: false
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
